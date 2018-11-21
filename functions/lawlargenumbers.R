@@ -1,5 +1,8 @@
 # Illustrate the law of large numbers by randomly sampling from a normal distribution
 #-----
+# Acknowledgement: Idea for plot came from Lionel Rigoux's talk at the 2018 Computational Psychiatry course (ETH Zurich):
+# https://www.video.ethz.ch/lectures/d-itet/2018/autumn/227-0971-00L/c2820ba3-882c-4910-8181-94471171a507.html
+#-----
 lawlargenumbers <- function(animation = FALSE, filename = NULL){
     
     # Check if required packages have actually been loaded

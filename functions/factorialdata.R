@@ -1,10 +1,10 @@
 # Simulate data for a 2x2 full factorial within-subjects design
 #-----
+# Ackowledgement: Code adapted from:
+# https://gist.github.com/gjkerns/1608265
+# https://cognitivedatascientist.com/2015/12/14/power-simulation-in-r-the-repeated-measures-anova-5/
+#-----
 factorialdata <- function(){
-    
-    # Ackowledgement: Code adapted from:
-    # https://gist.github.com/gjkerns/1608265
-    # https://cognitivedatascientist.com/2015/12/14/power-simulation-in-r-the-repeated-measures-anova-5/
     
     require(MASS) # for sampling from multivariate normal distribution
     
