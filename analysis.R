@@ -1,5 +1,11 @@
-# Starting up
+#------
+# Going beyond ANOVA: Bayesian linear mixed models in R
+# Analysis script in support of talk presented at the Cambridge Methods Day, 4 December 2018
+# Written by Frank H. Hezemans, MRC Cognition and Brain Sciences Unit, November 2018
+
 #-----
+# Starting up
+
 # Set directory to location of current script
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 root <- getwd()
@@ -8,7 +14,11 @@ root <- getwd()
 functionfilenames <- list.files(path = paste0(root, "/functions"))
 sapply(functionfilenames, source) # apply the source() function to the list of filenames
 
+# Load some general-purpose packages
+packages(dplyr, ggplot2)
+
 #-----
+# Typical analysis approach
 
 # Simulate data for a typical 2x2 within-subjects design
 packages(MASS) # contains function for sampling from multivariate normal distribution
@@ -24,7 +34,6 @@ afex::aov_ez(
 ) # you should get significant main effects, but a p value of .06 for the interaction
 
 # illustrate the data
-packages(ggplot2)
 myboxplot <- ggplot2::ggplot(data = data,
                              ggplot2::aes(x = coffee, y = time, colour = cake)) +
     ggplot2::geom_boxplot() +
@@ -46,19 +55,20 @@ myboxplot <- ggplot2::ggplot(data = data,
     )
 
 #-----
-
 # Bayesian Inference in the context of linear regression
+
 packages(Bolstad) # contains function for Bayesian inference for simple linear regression
 bayesregressionplot <- bayessimpleregression()
 
 #-----
-
 # Law of large numbers
+
 samplingplot <- lawlargenumbers() # add animation = TRUE as input argument if you want a GIF
 
 #-----
-
 # Fitting Bayesian linear mixed model with Stan
+
+packages(rstan)
 
 # Use contrast coding for the factors (see http://talklab.psy.gla.ac.uk/tvw/catpred/)
 cleandata <- data
@@ -92,6 +102,9 @@ print(bayesModel, pars = "beta", probs = c(0.025, 0.5, 0.975))
 save(list = "bayesModel", file = paste0(root, "/bayesModel.Rda"), compress = "xz")
 
 #-----
+# Plot results
+
+packages(bayesplot, ggridges)
 
 # Plot the results of our modelling
 mytraceplot <- traceplot(bayesModel)
