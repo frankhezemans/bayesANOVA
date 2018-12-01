@@ -22,9 +22,9 @@ I ran the analysis on a macOS 10.14 machine with R version 3.4.3 and RStan versi
 
 ## Resources
 
-Sorensen, T., Hohenstein, S., & Vasishth, S. (2016). Bayesian linear mixed models using Stan: A tutorial for psychologists, linguists, and cognitive scientists. *The Quantitative Methods for Psychology*, *12*(3), 175-200. doi: 10.20982/tqmp.12.3.p175
+Sorensen, T., Hohenstein, S., & Vasishth, S. (2016). Bayesian linear mixed models using Stan: A tutorial for psychologists, linguists, and cognitive scientists. *The Quantitative Methods for Psychology*, *12*(3), 175-200. https://doi.org/10.20982/tqmp.12.3.p175
 
-Kruschke, J. K., & Liddell, T. M. (2018). The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective. *Psychonomic Bulletin & Review*, *25*, 178-206. doi: 10.3758/s13423-016-1221-4
+Kruschke, J. K., & Liddell, T. M. (2018). The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective. *Psychonomic Bulletin & Review*, *25*, 178-206. https://doi.org/10.3758/s13423-016-1221-4
 
 McElreath, R. (2015). Statistical Rethinking: A Bayesian course with examples in R and Stan. https://xcelab.net/rm/statistical-rethinking/
 
@@ -32,11 +32,13 @@ Lambert, B. (2018). A student's guide to Bayesian statistics. https://www.youtub
 
 Kruschke, J. K. (2014). Doing Bayesian data analysis: A tutorial with R, JAGS and Stan. https://sites.google.com/site/doingbayesiandataanalysis/
 
-van Ravenzwaaij, D., Cassey, P., & Brown, S. D. (2018). A simple introduction to Markov Chain Monte-Carlo sampling. *Psychonomic Bulletin & Review*, *25*, 143-154. doi: 10.3758/s13423-016-1015-8
+Dablander, F. (2015). Bayesian statistics: Why and how. *JEPS Bulletin*. http://blog.efpsa.org/2015/08/03/bayesian-statistics-why-and-how/
 
-Wagenmakers, EJ., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., ... Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. *Psychonomic Bulletin & Review*, *25*, 35-57. doi: 10.3758/s13423-017-1343-3
+van Ravenzwaaij, D., Cassey, P., & Brown, S. D. (2018). A simple introduction to Markov Chain Monte-Carlo sampling. *Psychonomic Bulletin & Review*, *25*, 143-154. https://doi.org/10.3758/s13423-016-1015-8
 
-Colling, L. J., & Szűcs, D. (2018). Statistical inference and the replication crisis. *Review of Philosophy and Psychology*. doi: 10.1007/s13164-018-0421-4
+Wagenmakers, EJ., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., ... Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. *Psychonomic Bulletin & Review*, *25*, 35-57. https://doi.org/10.3758/s13423-017-1343-3
+
+Colling, L. J., & Szűcs, D. (2018). Statistical inference and the replication crisis. *Review of Philosophy and Psychology*. https://doi.org/10.1007/s13164-018-0421-4
 
 
 
