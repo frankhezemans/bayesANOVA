@@ -1,0 +1,6 @@
+install.packages("tidyverse")
+install.packages("MASS")
+install.packages("afex")
+install.packages("Bolstad")
+install.packages("rstan")
+install.packages("bayesplot")
