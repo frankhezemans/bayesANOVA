@@ -83,8 +83,8 @@ bayessimpleregression <- function(){
                        alpha = rep(c(0.1, 0.3, 0.7, 1, 0.7, 0.3, 0.1), times = 3), # transparency for plot: less likely estimates are more transparent
                        intercept = rep(0, times = 3*length(myprobs)),
                        stringsAsFactors = FALSE)
-    data$distribution <- factor(myplotdata$distribution, levels = c("prior", "likelihood", "posterior")) # fix the order of the distributions
-    data$probability <- as.factor(myplotdata$probability)
+    data$distribution <- factor(data$distribution, levels = c("prior", "likelihood", "posterior")) # fix the order of the distributions
+    data$probability <- as.factor(data$probability)
     
     # put the raw data (random pairs) in a separate dataframe, because we only need it for the likelihood plot
     rawdata <- data.frame(x = x, y = y,
@@ -106,7 +106,6 @@ bayessimpleregression <- function(){
                        axis.title = ggplot2::element_text(size = 20),
                        strip.text.x = ggplot2::element_text(size = 20),
                        axis.text = ggplot2::element_text(size = 12),
-                       panel.grid.minor = ggplot2::element_blank(),
-                       text = ggplot2::element_text(family = "Arial Narrow"))
+                       panel.grid.minor = ggplot2::element_blank())
     return(plot)
 }
