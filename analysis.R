@@ -98,7 +98,3 @@ myposteriorplot <- posteriorplot(bayesModel)
 
 # Add region of practical equivalence (ROPE)
 myposteriorplotROPE <- posteriorplot(bayesModel, rope = TRUE, limits = c(-0.25, 0.25))
-
-
-
-

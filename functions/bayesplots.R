@@ -1,3 +1,5 @@
+# Functions for plotting the result of Bayesian model fitting
+#-----
 traceplot <- function(bayesmodel, warmup = FALSE, window = NULL){
     
     require(ggplot2)
