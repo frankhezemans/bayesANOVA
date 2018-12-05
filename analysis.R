@@ -30,7 +30,7 @@ factorialplot <- myboxplot(data)
 packages(afex) # package for pain-free ANOVA
 afex::aov_ez(
     data = data,
-    id = "ID",
+    id = "subject",
     dv = "time",
     within = c("coffee", "cake")
 ) # you should get significant main effects, but a p value of .06 for the interaction
