@@ -34,3 +34,31 @@ factorialdata <- function(){
     
     return(data)
 }
+
+# Illustrate the data with a simple boxplot
+#-------
+myboxplot <- function(data){
+    
+    require(ggplot2)
+    
+    plot <- ggplot2::ggplot(data = data,
+                            ggplot2::aes(x = coffee, y = time, colour = cake)) +
+        ggplot2::geom_boxplot() +
+        ggplot2::scale_colour_brewer(palette = "Dark2",
+                                     labels = c("no cake", "cake")) +
+        ggplot2::scale_x_discrete(labels = c("no coffee", "coffee")) +
+        ggplot2::ylab("break time (minutes)") +
+        ggplot2::theme_minimal() +
+        ggplot2::theme(
+            axis.title.x = ggplot2::element_blank(),
+            axis.title.y = ggplot2::element_text(size = 20),
+            axis.text.x = ggplot2::element_text(size = 20, colour = "black"),
+            legend.position = c(0.5, 0.9),
+            legend.direction = "horizontal",
+            legend.title = ggplot2::element_blank(),
+            legend.text = ggplot2::element_text(size = 18),
+            legend.box.background = ggplot2::element_rect(fill = "grey90", colour = "white"),
+            text = element_text(family = "Arial Narrow")
+        )
+    return(plot)
+}
