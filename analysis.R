@@ -6,12 +6,11 @@
 #-----
 # Starting up
 
-# Set directory to location of current script
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# Make sure you've set your working directory correctly before running this next line
 root <- getwd()
 
 # Load support functions
-functionfilenames <- list.files(path = paste0(root, "/functions"))
+functionfilenames <- list.files(path = paste0(root, "/functions"), full.names = TRUE)
 sapply(functionfilenames, source) # apply the source() function to the list of filenames
 
 # Load some general-purpose packages
@@ -24,6 +23,9 @@ packages(dplyr, ggplot2)
 packages(MASS) # contains function for sampling from multivariate normal distribution
 data <- factorialdata()
 
+# illustrate the data
+factorialplot <- myboxplot(data)
+
 # perform ANOVA
 packages(afex) # package for pain-free ANOVA
 afex::aov_ez(
@@ -32,27 +34,6 @@ afex::aov_ez(
     dv = "time",
     within = c("coffee", "cake")
 ) # you should get significant main effects, but a p value of .06 for the interaction
-
-# illustrate the data
-myboxplot <- ggplot2::ggplot(data = data,
-                             ggplot2::aes(x = coffee, y = time, colour = cake)) +
-    ggplot2::geom_boxplot() +
-    ggplot2::scale_colour_brewer(palette = "Dark2",
-                                 labels = c("no cake", "cake")) +
-    ggplot2::scale_x_discrete(labels = c("no coffee", "coffee")) +
-    ggplot2::ylab("break time (minutes)") +
-    ggplot2::theme_minimal() +
-    ggplot2::theme(
-        axis.title.x = ggplot2::element_blank(),
-        axis.title.y = ggplot2::element_text(size = 20),
-        axis.text.x = ggplot2::element_text(size = 20, colour = "black"),
-        legend.position = c(0.5, 0.9),
-        legend.direction = "horizontal",
-        legend.title = ggplot2::element_blank(),
-        legend.text = ggplot2::element_text(size = 18),
-        legend.box.background = ggplot2::element_rect(fill = "grey90", colour = "white"),
-        text = element_text(family = "Arial Narrow")
-    )
 
 #-----
 # Bayesian Inference in the context of linear regression
@@ -104,7 +85,7 @@ save(list = "bayesModel", file = paste0(root, "/bayesModel.Rda"), compress = "xz
 #-----
 # Plot results
 
-packages(bayesplot, ggridges)
+packages(bayesplot)
 
 # Plot the results of our modelling
 mytraceplot <- traceplot(bayesModel)
