@@ -57,8 +57,7 @@ myboxplot <- function(data){
             legend.direction = "horizontal",
             legend.title = ggplot2::element_blank(),
             legend.text = ggplot2::element_text(size = 18),
-            legend.box.background = ggplot2::element_rect(fill = "grey90", colour = "white"),
-            text = element_text(family = "Arial Narrow")
+            legend.box.background = ggplot2::element_rect(fill = "grey90", colour = "white")
         )
     return(plot)
 }

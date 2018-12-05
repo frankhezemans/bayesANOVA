@@ -34,7 +34,6 @@ traceplot <- function(bayesmodel, warmup = FALSE, window = NULL){
         ggplot2::xlab(xlabel) +
         ggplot2::theme(axis.title = ggplot2::element_text(size = 20),
                        strip.text = ggplot2::element_text(size = 20),
-                       text = ggplot2::element_text(family = "Arial Narrow"),
                        legend.position = "top",
                        legend.direction = "horizontal",
                        legend.margin = ggplot2::margin(t = 0, unit = "cm"))
@@ -89,8 +88,7 @@ posteriorplot <- function(bayesmodel, rope = FALSE, limits = NULL){
                        axis.text.y = element_text(angle = 90, hjust = 0,
                                                   colour = "black", size = 20),
                        axis.text.x = element_text(size = 15),
-                       axis.title.x = element_text(size = 20),
-                       text = ggplot2::element_text(family = "Arial Narrow"))
+                       axis.title.x = element_text(size = 20))
     
     if (rope){
         posteriorplot <- posteriorplot +
@@ -103,7 +101,7 @@ posteriorplot <- function(bayesmodel, rope = FALSE, limits = NULL){
             ggplot2::annotate(
                 geom = "text",
                 x = 0, y = 0.25, label = "ROPE",
-                family = "Arial Narrow", colour = "red4", size = 8
+                colour = "red4", size = 8
             )
     }
     
