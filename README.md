@@ -1,5 +1,7 @@
 # Going beyond ANOVA: Bayesian linear mixed models in R
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/frankhezemans/bayesANOVA/master?urlpath=rstudio)
+
 Code in support of talk presented at the [MRC CBU Methods Day](http://imaging.mrc-cbu.cam.ac.uk/methods/MethodsDaySchedule). The main analysis and corresponding Stan code was taken from a tutorial paper by Sorensen, Hohenstein and Vasishth (click [here](http://dx.doi.org/10.20982/tqmp.12.3.p175) for the paper and [here](https://github.com/vasishth/BayesLMMTutorial) for the associated GitHub repository).
 
 This repository is organised as follows:
@@ -13,6 +15,8 @@ This repository is organised as follows:
     * `bayesplots.R` contains several functions to plot the results of the Bayesian model fitting
 
 ## Dependencies
+
+Note that I've created a [Binder version of this repository](https://mybinder.org/v2/gh/frankhezemans/bayesANOVA/master?urlpath=rstudio), which provides a virtual RStudio environment with all the necessary packages already installed.
 
 The model fitting is performed by `RStan`, which is an [R](https://www.r-project.org) interface to the [Stan](http://mc-stan.org) programming language. If you've never used the `RStan` package before, check out the [quick start guide](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started).
 
