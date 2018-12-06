@@ -44,8 +44,15 @@ bayesregressionplot <- bayessimpleregression()
 #-----
 # Law of large numbers
 
-packages(ggpubr)
-samplingplot <- lawlargenumbers() # add animation = TRUE as input argument if you want a GIF
+# Specify if you want GIF animation or static image
+animated <- FALSE
+if (animated){
+    packages(gganimate, magick) # for animated ggplots, and putting together GIFs
+} else {
+    packages(ggpubr) # for putting together ggplots
+}
+
+samplingplot <- lawlargenumbers(animation = animated)
 
 #-----
 # Fitting Bayesian linear mixed model with Stan
