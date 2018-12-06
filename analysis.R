@@ -44,6 +44,7 @@ bayesregressionplot <- bayessimpleregression()
 #-----
 # Law of large numbers
 
+packages(ggpubr)
 samplingplot <- lawlargenumbers() # add animation = TRUE as input argument if you want a GIF
 
 #-----
@@ -88,10 +89,10 @@ save(list = "bayesModel", file = paste0(root, "/bayesModel.Rda"), compress = "xz
 packages(bayesplot)
 
 # Plot the results of our modelling
-mytraceplot <- traceplot(bayesModel)
+mytraceplot <- mytraceplot(bayesModel)
 
 # Highlight the first few warmup iterations
-mywarmuptraceplot <- traceplot(bayesModel, warmup = TRUE, window = c(0, 50))
+mywarmuptraceplot <- mytraceplot(bayesModel, warmup = TRUE, window = c(0, 50))
 
 # Plot the posterior densities
 myposteriorplot <- posteriorplot(bayesModel)

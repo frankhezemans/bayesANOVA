@@ -1,6 +1,6 @@
 # Functions for plotting the result of Bayesian model fitting
 #-----
-traceplot <- function(bayesmodel, warmup = FALSE, window = NULL){
+mytraceplot <- function(bayesmodel, warmup = FALSE, window = NULL){
     
     require(ggplot2)
     require(bayesplot)
@@ -29,7 +29,7 @@ traceplot <- function(bayesmodel, warmup = FALSE, window = NULL){
         xlabel <- "post warm-up iteration"
     }
     bayesplot::color_scheme_set("mix-blue-red")
-    traceplot <- bayesplot::mcmc_trace(
+    mytraceplot <- bayesplot::mcmc_trace(
         posterior_beta, window = window,
         facet_args = list(ncol = 1, strip.position = "left",
                                           labeller = ggplot2::label_parsed)) +
@@ -40,7 +40,7 @@ traceplot <- function(bayesmodel, warmup = FALSE, window = NULL){
                        legend.direction = "horizontal",
                        legend.margin = ggplot2::margin(t = 0, unit = "cm"))
     
-    return(traceplot)
+    return(mytraceplot)
 }
 
 posteriorplot <- function(bayesmodel, rope = FALSE, limits = NULL){
